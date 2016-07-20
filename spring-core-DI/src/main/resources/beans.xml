@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+				http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!-- Declaring beans, it creates a simple Java object like below -->
+	<!-- Report bean1 = new Report(); -->
+	<bean id="bean1" class="com.msrm.springframework.di.Report" />
+
+	<!-- Setter injection -->
+	<!-- Creates a Java object and initializes its values by calling setter 
+		methods -->
+	<bean id="bean2" class="com.msrm.springframework.di.Report">
+		<property name="id" value="100" />
+		<property name="description" value="This is payment report" />
+	</bean>
+
+	<!-- Constructor injection -->
+	<!-- Creates a Java object and initializes values by constructor of the 
+		bean -->
+	<bean id="bean3" class="com.msrm.springframework.di.Report">
+		<constructor-arg index="0" value="101" />
+		<constructor-arg index="1" value="Stock procurement report" />
+	</bean>
+
+
+</beans>  
